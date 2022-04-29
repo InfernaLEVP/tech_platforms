@@ -1,30 +1,52 @@
 <template>
-  <div id="nav">
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </div>
+  </div> -->
   <router-view/>
+  <!-- <img class="world" src="/world.svg" alt=""> -->
 </template>
 
+<script>
+export default {
+    mounted() {
+        setTimeout(() => {
+            this.$router.push(window.configuratedRoute);
+        }, 3000);
+    }
+}
+</script>
+
 <style>
+body{
+    margin: 0;
+    /* background: radial-gradient(ellipse at top, #e66465, transparent),
+            radial-gradient(ellipse at bottom, #4d9f0c, transparent); */
+    background: url(/main/bg_all.png);
+    height: 1920px;
+    width: 1080px;
+    overflow: hidden;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
+.world{
+    position: absolute;
+    left: 0;
+    top: 400px;
+    width: 100%;
+    max-width: 100%;
+    z-index: -1;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+*{
+    box-sizing: border-box;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+img{
+    max-width: 100%;
+}
+*{
+    outline: none!important;
 }
 </style>
